@@ -69,12 +69,9 @@ For completed shipments, the order journey is decomposed chronologically:
 *Only orders satisfying $\Delta t_{\text{approval}} > 0$, $\Delta t_{\text{carrier}} > 0$, and $\Delta t_{\text{last-mile}} > 0$ with `delivered` status are retained to eliminate data-entry artifacts.*
 
 ### 2. Geospatial Filtering & Boundary Verification
-Raw zip code coordinates contain measurement outliers outside Brazil. Coordinates are filtered via point-in-polygon verification:
-
-$$\text{ST\_Point}(\text{lng}, \text{lat}) \in \text{Brazil ADM0 Boundary}$$
+Raw zip code coordinates contain measurement outliers outside Brazil. Coordinates are filtered via point-in-polygon verification.
 
 Zip codes are subsequently grouped by prefix to extract median latitude/longitude and mode city/state strings, resolving multi-point variance.
-
 ---
 
 ## 📐 Feature Dictionary (Model Schema)
@@ -136,7 +133,6 @@ The project implements a Scikit-Learn `Pipeline` coupled with a `ColumnTransform
 ├── data/                                 # Raw Olist CSV files & GeoJSON boundaries
 ├── olist_delivery_time_prediction.ipynb  # Main pipeline (DuckDB Spatial, Feature Store, ML)
 ├── model_delivery_time.pkl               # Serialized Scikit-Learn regression pipeline
-├── requirements.txt                      # Project dependencies
 └── README.md                             # Documentation
 ```
 
