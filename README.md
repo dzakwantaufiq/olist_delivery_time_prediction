@@ -130,7 +130,6 @@ The project implements a Scikit-Learn `Pipeline` coupled with a `ColumnTransform
 
 ```text
 .
-├── data/                                 # Raw Olist CSV files & GeoJSON boundaries
 ├── olist_delivery_time_prediction.ipynb  # Main pipeline (DuckDB Spatial, Feature Store, ML)
 ├── model_delivery_time_prediction.sav    # Serialized Scikit-Learn regression pipeline
 └── README.md                             # Documentation
