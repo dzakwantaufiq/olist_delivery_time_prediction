@@ -150,16 +150,7 @@ cd olist-delivery-time-prediction
 pip install pandas numpy scipy duckdb scikit-learn xgboost lightgbm category-encoders python-dotenv tqdm matplotlib seaborn
 ```
 
-### 2. Environment Configuration
-
-Create a `.env` file in the root directory to configure data directories:
-
-```env
-data_path=./data
-data_path_geo=./data
-```
-
-### 3. DuckDB Spatial Setup
+### 2. DuckDB Spatial Setup
 
 DuckDB Spatial is required for geospatial boundary verification. Ensure the extension is loaded prior to spatial transformations:
 
